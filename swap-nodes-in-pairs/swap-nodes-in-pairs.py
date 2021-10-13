@@ -5,7 +5,93 @@
 #         self.next = next
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
-        return self.swapper(head)
+        '''
+        1 -> 2 -> 3 -> 4 -> 5
+        2 -> 1 -> 4 -> 3 -> 5
+        
+        1 -> 2 -> 3 -> 4 -> 5 -> 6
+        2 -> 1 -> 4 -> 3 -> 6 -> 5
+        '''
+        if head is None or head.next is None:
+            return head
+        curr = head
+        nxt = head.next
+        
+        curr.next = self.swapPairs(nxt.next)
+        nxt.next = curr
+        return nxt
+
+        
+        
+        
+        
+        
+        
+        
+        
+        #         if head is None or head.next is None:
+#             return head
+#         curr = head
+#         nxt = head.next
+#         curr.next = nxt.next
+#         nxt.next = curr
+#         head = nxt
+#         if head.next.next:
+#             self.swapper(head.next, head.next.next, head.next.next.next)
+#         return head
+    
+#     def swapper(self, prev, curr, nxt):
+#         if curr is None or nxt is None:
+#             return
+#         curr.next = nxt.next
+#         nxt.next = curr
+#         prev.next = nxt
+#         if nxt.next.next:
+#             self.swapper(nxt.next, nxt.next.next, nxt.next.next.next)
+#         return
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     '''
     A. Recursive approach
@@ -31,26 +117,26 @@ class Solution:
     B. Iterative approach
     '''
     
-    def swapper(self, head):
+#     def swapper(self, head):
         
-        dummy = ListNode(-1)
-        dummy.next = head
+#         dummy = ListNode(-1)
+#         dummy.next = head
         
-        prevNode = dummy
+#         prevNode = dummy
         
-        while head and head.next:
+#         while head and head.next:
             
-            firstNode = head
-            secondNode = head.next
+#             firstNode = head
+#             secondNode = head.next
             
-            firstNode.next = secondNode.next
-            secondNode.next = firstNode
+#             firstNode.next = secondNode.next
+#             secondNode.next = firstNode
             
-            prevNode.next = secondNode
+#             prevNode.next = secondNode
             
-            head = firstNode.next
-            prevNode = firstNode
+#             head = firstNode.next
+#             prevNode = firstNode
        
-        return dummy.next
+#         return dummy.next
             
         
